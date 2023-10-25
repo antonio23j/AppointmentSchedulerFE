@@ -12,7 +12,6 @@ form.addEventListener('submit', async event => {
 
     //Convert the date field to ISO String
     formDataObject.date = new Date(formDataObject.date).toISOString();
-    console.log(formDataObject.date);
 
     try {
 
@@ -31,12 +30,12 @@ form.addEventListener('submit', async event => {
             const cell2 = row.insertCell();
             const cell3 = row.insertCell();
             const cell4 = row.insertCell();
-            const cell5 = row.insertCell(); 
+            const cell5 = row.insertCell();
             cell1.innerHTML = element['id'];
             cell2.innerHTML = element['name'];
-            cell3.innerHTML = element['startDateTime'];
+            cell3.innerHTML = new Date(element['startDateTime']).toLocaleString();
             cell4.innerHTML = element['duration'];
-            cell5.innerHTML = element['endDateTime'];
+            cell5.innerHTML = new Date(element['endDateTime']).toLocaleString();
         })
         console.log(resData);
     } catch(err){

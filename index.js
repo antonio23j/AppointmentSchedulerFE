@@ -10,7 +10,7 @@ form.addEventListener('submit', async event => {
   });
 
   // Convert the date field to ISO string
-  formDataObject.dateTime = new Date(formDataObject.dateTime).toISOString();
+  formDataObject.dateTime = new Date(new Date(formDataObject.dateTime).toString().split('GMT')[0]+' UTC').toISOString();
 
 
   try {
